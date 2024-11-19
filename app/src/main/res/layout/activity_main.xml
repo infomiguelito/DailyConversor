@@ -87,26 +87,16 @@
 
 
     <TextView
-        android:id="@+id/tv_info_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resultado:"
-        android:layout_margin="16dp"
-        android:textSize="28sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/tv_info_from"
-        app:layout_constraintStart_toStartOf="@+id/tv_info_from"
-        app:layout_constraintTop_toBottomOf="@+id/convert_exit" />
-
-    <TextView
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text= "64.5"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_info_result" />
+        app:layout_constraintTop_toBottomOf="@+id/convert_exit"
+        tools:text="64.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical_guideline"

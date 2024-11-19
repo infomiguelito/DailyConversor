@@ -1,10 +1,5 @@
 <resources>
     <string name="app_name">DailyConversor</string>
-    <string name="limpar">Limpar</string>
-    <string name="calcular">Calcular</string>
-    <string-array name="convert">
-        <item>Volume</item>
-        <item>Distância</item>
-        <item>Peso</item>
-    </string-array>
+    <string name="limpar">Clean</string>
+    <string name="calcular">Calculate</string>
 </resources>
