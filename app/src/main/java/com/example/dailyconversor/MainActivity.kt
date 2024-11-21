@@ -2,6 +2,7 @@ package com.example.dailyconversor
 
 import android.os.Bundle
 import android.text.Editable
+import android.text.InputType
 import android.text.TextWatcher
 import android.view.View
 import android.widget.AdapterView
@@ -15,6 +16,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         val tvResult = findViewById<TextView>(R.id.tv_result)
         val btnClean = findViewById<Button>(R.id.btn_clean)
         val btnCalculator = findViewById<Button>(R.id.btn_calculator)
+        val tilNumber = findViewById<TextInputLayout>(R.id.textInputLayout)
 
 
         val firstSpinner = findViewById<Spinner>(R.id.convert_enter)
@@ -80,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                         id: Long
                     ) {
                         selectedUnit = units[position]
-                        tvResult.text = "Resultado" // Reseta o resultado
+                        tvResult.text = "Resultado"
                     }
 
 
@@ -97,23 +100,25 @@ class MainActivity : AppCompatActivity() {
         btnCalculator.setOnClickListener {
             val textResult = edtTaskName.text.toString()
 
-            // Se o valor não for vazio
             if (textResult.isNotEmpty()) {
                 val value = textResult.toDoubleOrNull()
                 if (value != null) {
-                    // Realizar a conversão
                     val convertedValue = convertValue(value, selectedUnit)
-
-                    // Mostrar o resultado
                     tvResult.text = "Resultado: $convertedValue $selectedUnit"
                 } else {
-                    tvResult.text = "Valor inválido"
+                    Snackbar.make(btnCalculator,"Valor inválido",Snackbar.LENGTH_LONG).show()
                 }
             } else {
-                tvResult.text = "Insira um valor"
+                Snackbar.make(btnCalculator,"Insira um valor",Snackbar.LENGTH_LONG).show()
             }
 
             true
+        }
+
+        btnClean.setOnClickListener {
+            tvResult.text = ""
+            edtTaskName.setText("")
+            tilNumber.clearFocus()
         }
 
 

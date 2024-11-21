@@ -47,6 +47,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/convert_enter"
         app:layout_constraintStart_toStartOf="@+id/convert_enter"
@@ -56,7 +57,7 @@
             android:id="@+id/tie_task_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:inputType="numberDecimal"
             android:hint="Ex: 3.4" />
 
 
