@@ -36,11 +36,11 @@ class MainActivity : AppCompatActivity() {
         val secondSpinner = findViewById<Spinner>(R.id.convert_exit)
 
 
-        val categories = listOf("Peso", "Distância", "Volume")
+        val categories = listOf("Weight", "Distance", "Volume")
         val dataMap = mapOf(
-            "Peso" to listOf("Quilogramas", "Gramas", "Libras"),
-            "Distância" to listOf("Metros", "Quilômetros", "Milhas"),
-            "Volume" to listOf("Litros", "Mililitros", "Galões")
+            "Weight" to listOf("Kilograms", "Grams", "Pounds"),
+            "Distance" to listOf("Meters", "Kilometers", "Miles"),
+            "Volume" to listOf("Liters", "Millimeters", "Gallons")
         )
 
         val categoryAdapter = ArrayAdapter(
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
                 secondSpinner.adapter = unitAdapter
 
 
-                tvResult.text = "Resultado"
+                tvResult.text = "Result"
 
                 secondSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                     override fun onItemSelected(
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                         id: Long
                     ) {
                         selectedUnit = units[position]
-                        tvResult.text = "Resultado"
+                        tvResult.text = "Result"
                     }
 
 
@@ -104,12 +104,12 @@ class MainActivity : AppCompatActivity() {
                 val value = textResult.toDoubleOrNull()
                 if (value != null) {
                     val convertedValue = convertValue(value, selectedUnit)
-                    tvResult.text = "Resultado: $convertedValue $selectedUnit"
+                    tvResult.text = "Result: $convertedValue $selectedUnit"
                 } else {
-                    Snackbar.make(btnCalculator,"Valor inválido",Snackbar.LENGTH_LONG).show()
+                    Snackbar.make(btnCalculator,"Invalid value",Snackbar.LENGTH_LONG).show()
                 }
             } else {
-                Snackbar.make(btnCalculator,"Insira um valor",Snackbar.LENGTH_LONG).show()
+                Snackbar.make(btnCalculator,"Enter a value",Snackbar.LENGTH_LONG).show()
             }
 
             true
@@ -127,15 +127,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun convertValue(value: Double, unit: String): Double {
         return when (unit) {
-            "Quilogramas" -> value * 1.0
-            "Gramas" -> value * 1000
-            "Libras" -> value * 2.20462
-            "Metros" -> value * 1.0
-            "Quilômetros" -> value / 1000
-            "Milhas" -> value / 1609.34
-            "Litros" -> value * 1.0
-            "Mililitros" -> value * 1000
-            "Galões" -> value / 3.78541
+            "Kilograms…" -> value * 1.0
+            "Grams" -> value * 1000
+            "Pounds" -> value * 2.20462
+            "Meters" -> value * 1.0
+            "Kilometers" -> value / 1000
+            "Miles" -> value / 1609.34
+            "Liters" -> value * 1.0
+            "Millimeters" -> value * 1000
+            "Gallons" -> value / 3.78541
             else -> value
         }
     }
