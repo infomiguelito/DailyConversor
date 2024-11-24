@@ -11,7 +11,10 @@
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:textColor="@color/SlateBlue"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:gravity="center"
         android:text="DailyConversor"
         android:textSize="32sp"
@@ -24,11 +27,12 @@
         android:id="@+id/tv_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/DarkSlateBlue"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Converter:"
-        android:textStyle="italic"
+        android:text="Convert:"
+        android:textStyle="bold"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_title"
         app:layout_constraintStart_toStartOf="@+id/tv_title"
@@ -47,6 +51,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/convert_enter"
         app:layout_constraintStart_toStartOf="@+id/convert_enter"
@@ -55,8 +60,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tie_task_name"
             android:layout_width="match_parent"
+            app:boxStrokeColor="@color/DarkSlateBlue"
+            app:hintTextColor="@color/DarkSlateBlue"
+            app:cursorErrorColor="@color/DarkSlateBlue"
+            app:cursorColor="@color/DarkSlateBlue"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:inputType="numberDecimal"
             android:hint="Ex: 3.4" />
 
 
@@ -66,12 +75,13 @@
         android:id="@+id/tv_info_from"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Para:"
+        android:text="For:"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textColor="@color/DarkSlateBlue"
         android:textSize="24sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
@@ -87,26 +97,17 @@
 
 
     <TextView
-        android:id="@+id/tv_info_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Resultado:"
-        android:layout_margin="16dp"
-        android:textSize="28sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="@+id/tv_info_from"
-        app:layout_constraintStart_toStartOf="@+id/tv_info_from"
-        app:layout_constraintTop_toBottomOf="@+id/convert_exit" />
-
-    <TextView
         android:id="@+id/tv_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text= "64.5"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:layout_marginTop="32dp"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_info_result" />
+        app:layout_constraintTop_toBottomOf="@+id/convert_exit"
+        tools:text="64.5" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/vertical_guideline"
@@ -124,6 +125,7 @@
         android:layout_marginEnd="4dp"
         android:layout_marginBottom="16dp"
         android:layout_marginStart="4dp"
+        android:textColor="@color/SlateBlue"
         android:text="@string/limpar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/vertical_guideline"
@@ -137,6 +139,7 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="4dp"
         android:text="@string/calcular"
+        android:backgroundTint="@color/DarkSlateBlue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/vertical_guideline" />
